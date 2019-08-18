@@ -3,9 +3,8 @@ F - Convert Fahrenheit to Celsius
 Q - Quit"""
 
 def main():
-    #controls the temperature converation program
-    print(MENU)
-    choice = input(">>> ").upper()
+    #controls the temperature conversion program
+    choice = menu()
 
     while choice != "Q":
 
@@ -16,17 +15,30 @@ def main():
 
         elif choice == "F":
             fahrenheit = float(input("fahrenheit: "))
-            celsius = (fahrenheit - 32) * 5 / 9
+            celsius = convert_to_celsius(fahrenheit)
             print("Result: {:.2f} F".format(celsius))
 
         else:
             print("Invalid option")
-        print(MENU)
-        choice = input(">>> ").upper()
+
+        choice = menu()
     print("Thank you.")
 
+
+def menu():
+    #prints menu options and returns users choice
+    print(MENU)
+    choice = input(">>> ").upper()
+    return choice
+
+
+def convert_to_celsius(fahrenheit):
+    #users input of fahrenheit is passed in and returns celsius conversion
+    return (fahrenheit - 32) * 5 / 9
+
+
 def convert_to_fahrenheit(celsius):
-    #users input of celcius is passed in and returns fahrenheit conversation
+    #users input of celcius is passed in and returns fahrenheit conversion
     return celsius * 9.0 / 5 + 32
 
 main()
