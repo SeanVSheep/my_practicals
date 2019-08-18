@@ -11,7 +11,7 @@ def main():
 
         if choice == "C":
             celsius = float(input("Celsius: "))
-            fahrenheit = method_name(celsius)
+            fahrenheit = convert_to_fahrenheit(celsius)
             print("Result: {:.2f} F".format(fahrenheit))
 
         elif choice == "F":
@@ -25,8 +25,8 @@ def main():
         choice = input(">>> ").upper()
     print("Thank you.")
 
-def method_name(celsius):
-    #users input for fahrenheit is passed in and returns celsius conversation
+def convert_to_fahrenheit(celsius):
+    #users input of celcius is passed in and returns fahrenheit conversation
     return celsius * 9.0 / 5 + 32
 
 main()
