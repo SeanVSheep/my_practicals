@@ -32,12 +32,12 @@ def menu():
     return choice
 
 
-def convert_to_celsius(fahrenheit):
+def convert_fahrenheit_to_celsius(fahrenheit):
     #users input of fahrenheit is passed in and returns celsius conversion
     return (fahrenheit - 32) * 5 / 9
 
 
-def convert_to_fahrenheit(celsius):
+def convert_celsius_to_fahrenheit(celsius):
     #users input of celcius is passed in and returns fahrenheit conversion
     return celsius * 9.0 / 5 + 32
 
