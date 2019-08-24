@@ -24,7 +24,18 @@ def main():
         except ValueError:
             print("ERROR! Please enter numerical value")
 
+    for i in range(picks):
+        generated_numbers = []
+        exitLoop = False
+        while not exitLoop:
+            new_number = random.randint(MIN_RANGE, MAX_RANGE)
+            if new_number not in generated_numbers:
+                generated_numbers.append(new_number)
 
+            if len(generated_numbers) == 6:
+                exitLoop = True
+        generated_numbers.sort()
+        print("{:3}{:3}{:3}{:3}{:3}{:3}".format(generated_numbers[0], generated_numbers[1], generated_numbers[2], generated_numbers[3], generated_numbers[4], generated_numbers[5]))
 
 
 
