@@ -17,14 +17,36 @@ def main():
     exitLoop = False
     while not exitLoop:
         try:
-            picks = int(input("How many quick picks? "))
-            while picks <= 0:
-                picks = int(input("Picks must be greater then 0: "))
+            number_of_picks = int(input("How many quick picks? "))
+            while number_of_picks <= 0:
+                number_of_picks = int(input("Picks must be greater then 0: "))
             exitLoop = True
         except ValueError:
             print("ERROR! Please enter numerical value")
 
-    for i in range(picks):
+    print_quick_picks(number_of_picks)
+    #optomised_quick_picks(number_of_picks)
+
+
+def optomised_quick_picks(number_of_picks):
+    #code extracted from solutions to show where I can improve my solution
+    for i in range(number_of_picks):
+        quick_picks = []
+        for j in range(NUMBERS_ON_A_LINE):
+            number = random.randint(MIN_RANGE, MAX_RANGE)
+            while number in quick_picks:
+                number = random.randint(MIN_RANGE, MAX_RANGE)
+            quick_picks.append(number)
+        quick_picks.sort()
+        # the following uses a generator expression (like a list comprehension)
+        # to format each number in quick_pick in the same way
+        # this is then turned into a single string with the join method
+        print(" ".join("{:2}".format(number) for number in quick_picks))
+
+
+def print_quick_picks(number_of_picks):
+    #my code for solution to exercise
+    for i in range(number_of_picks):
         generated_numbers = []
         exitLoop = False
         while not exitLoop:
@@ -36,9 +58,6 @@ def main():
                 exitLoop = True
         generated_numbers.sort()
         print("{:3}{:3}{:3}{:3}{:3}{:3}".format(generated_numbers[0], generated_numbers[1], generated_numbers[2], generated_numbers[3], generated_numbers[4], generated_numbers[5]))
-
-
-
 
 
 main()
