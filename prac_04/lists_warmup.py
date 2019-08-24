@@ -21,5 +21,19 @@ print(7 in numbers)
 print("3" in numbers)
 print(numbers + [6, 5, 3])
 
+#Q1-  Change the first element of numbers to "ten"
+numbers[0] = "ten"
+print(numbers)
+
+#Q2- Change the last element of numbers to 1
+numbers[-1] = 1
+print(numbers)
+
+#Q3-  Get all the elements from numbers except the first two
+print(numbers[2:])
+
+
+#Q4-  Check if 9 is an element of numbers
+print("9 is in numbers: {}".format(9 in numbers))
 
 
