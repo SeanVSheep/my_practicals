@@ -13,3 +13,11 @@ def question_one():
 
 #question_one()
 
+def woefully_inadequate_security_checker():
+    usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface', 'BaseStdIn', 'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer', 'bob']
+    if input("Please verify username: ") in usernames:
+        print("Access granted")
+    else:
+        print("Access denied")
+
+#woefully_inadequate_security_checker()
