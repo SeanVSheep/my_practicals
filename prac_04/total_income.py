@@ -25,18 +25,29 @@ Month  5 - Income: $     12.35         Total: $   2483.31
 def main():
     """Display income report for incomes over a given number of months."""
     incomes = []
-    months = int(input("How many months? "))
+    exitLoop = False
+    while not exitLoop:
+        try:
+            numer_of_months = int(input("How many months? "))
+            exitLoop = True
+        except ValueError:
+            print("ERROR! Please enter numerical value")
 
-    for month in range(1, months + 1):
-        income = float(input("Enter income for month " + str(month) + ": "))
+    exitLoop = False
+    for numer_of_months in range(1, numer_of_months + 1):
+        income = float(input("Enter income for months {} : ".format(numer_of_months)))
         incomes.append(income)
 
+    print_report(incomes, numer_of_months)
+
+
+def print_report(incomes, numer_of_months):
     print("\nIncome Report\n-------------")
     total = 0
-    for month in range(1, months + 1):
-        income = incomes[month - 1]
+    for numer_of_months in range(1, numer_of_months + 1):
+        income = incomes[numer_of_months - 1]
         total += income
-        print("Month {:2} - Income: ${:10.2f} Total: ${:10.2f}".format(month, income, total))
+        print("Month {:2} - Income: ${:10.2f} Total: ${:10.2f}".format(numer_of_months, income, total))
 
 
 main()
