@@ -1,4 +1,6 @@
 WORDS = ['hi', 'hello', 'you', 'poop', 'haha', 'hi', 'you', 'you']
+ages_dict = {"Bill": 21, "janes": 34, "jack": 56}
+
 
 def main():
     count_dict = {}
@@ -23,4 +25,19 @@ def main2():
 
     print(count_dict)
 
-main2()
+    count_dict["bob"] = count_dict.get("bob", 0) + 1
+
+    print(count_dict)
+
+#main2()
+
+def dict_activity():
+    name = input("Name: ")
+    age = int(input("Age: "))
+    ages_dict[name] = age
+    for char in ages_dict:
+        print("{:10} - {:6}".format(char, ages_dict[char]))
+
+
+
+dict_activity()
