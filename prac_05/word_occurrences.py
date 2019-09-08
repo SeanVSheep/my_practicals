@@ -17,8 +17,6 @@ def main():
     organised_key_values = list(key for key in count_dict)
     organised_key_values.sort()
 
-    print(len(max(count_dict, key=len)))
-
     for name in organised_key_values:
         print("{:{}} : {}".format(name, len(max(count_dict, key=len)), count_dict[name]))
 
