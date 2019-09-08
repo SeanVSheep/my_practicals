@@ -3,18 +3,24 @@ CP1404 Practical
 hex colours in a dictionary
 """
 
-HEX_COLOURS = {"alice blue": "#f0f8ff", "antique white": "#faebd7", "antique white1": "#ffefdb", "antique white2": "#eedfcc", "antique white3": "#cdc0b0", "antique white4": "#8b8378", "aqua marine1": "#7fffd4", "aqua marine2": "#76eec6", "aqua marine4": "#458b74", "azure1": "#f0ffff"}
+HEX_COLOURS = {"aliceblue": "#f0f8ff", "antiquewhite": "#faebd7",
+               "antiquewhite1": "#ffefdb", "antiquewhite2": "#eedfcc",
+               "antiquewhite3": "#cdc0b0", "antiquewhite4": "#8b8378",
+               "aquamarine1": "#7fffd4", "aquamarine2": "#76eec6",
+               "aquamarine4": "#458b74", "azure1": "#f0ffff",
+               "azure2": "#e0eeee", "azure3": "#c1cdcd",
+               "azure4": "#838b8b", "beige": "#f5f5dc",
+               "bisque1": "#ffe4c4", "bisque2": "#eed5b7",
+               "bisque3": "#cdb79e", "bisque4": "#8b7d6b"}
 
 def main():
-    colour_name = input("What colour would you like the hex value of: ")
+    colour_name = input("What colour would you like the hex value of: ").lower()
 
-    while colour_name != " ":
-        try:
-            print(HEX_COLOURS[colour_name])
-        except KeyError:
-            print("Hex value not defined")
+    while colour_name != "":
 
-        colour_name = input("What colour would you like the hex value of: ")
+            print("{} is {}".format(colour_name, HEX_COLOURS.get(colour_name)))
+
+            colour_name = input("What colour would you like the hex value of: ").lower()
 
     print('Goodbye')
 
