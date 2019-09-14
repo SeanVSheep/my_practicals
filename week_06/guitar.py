@@ -16,13 +16,4 @@ class Guitar:
     def is_vintage(self):
         return self.get_age() >= 50
 
-def main():
-    """ test code for guitar class"""
 
-    gibson = Guitar("Gibson L-5 CES", 1922, 16035.40)
-    print(gibson)
-
-    print(gibson.get_age())
-    print(gibson.is_vintage())
-
-main()
