@@ -8,7 +8,9 @@ class Guitar:
         self.cost = cost
 
     def __str__(self):
-        return "My guitar: {}, first made in {}".format(self.name, self.year)
+        return "{} ({}) : ${:.2f}".format(self.name, self.year, self.cost)
 
+    def get_age(self):
+        return "The {} is 2019 - {} = {}".format(self.name, self.year, str(2019 - self.year))
 
 
