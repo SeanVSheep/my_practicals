@@ -6,6 +6,7 @@ BoxLayout:
             id: input_number
             text: '34'
             multiline: False
+            on_text: app.handle_conversion()
         BoxLayout:
             orientation: 'vertical'
             Button:
@@ -16,10 +17,10 @@ BoxLayout:
                 id: down
                 text: 'Down'
                 on_press: app.handle_increment(-1)
-    Button:
-        id: convert
-        text: 'Convert m to km'
-        on_press: app.handle_conversion()
+    #Button:
+    #    id: convert
+    #    text: 'Convert m to km'
+    #    on_press: app.handle_conversion()
     Label:
         id: output
         text: '54.717'
