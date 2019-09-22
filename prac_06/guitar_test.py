@@ -1,6 +1,6 @@
 """CP1404 Practical - Guitar Test prac"""
 
-from week_06.guitar import Guitar
+from prac_06.guitar import Guitar
 
 def main():
     """ test code for guitar class"""
