@@ -13,4 +13,17 @@ class ConvertMilesToKm(App):
         self.root = Builder.load_file('do_from_scratch.kv')
         return self.root
 
+    def handle_increment(self, increment):
+        try:
+            number = int(self.root.ids.input_number.text)
+            self.root.ids.input_number.text = str(number + increment)
+        except:
+            self.root.ids.input_number.text = str(increment)
+
+    def handle_conversion(self):
+        try:
+            self.root.ids.output.text = str(int(self.root.ids.input_number.text) * 1.60934)
+        except:
+            self.root.ids.output.text = "0.0"
+
 ConvertMilesToKm().run()

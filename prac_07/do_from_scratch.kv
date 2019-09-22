@@ -11,14 +11,15 @@ BoxLayout:
             Button:
                 id: up
                 text: 'Up'
-                on_press: app.add_one(int(input_number.text))
+                on_press: app.handle_increment(1)
             Button:
                 id: down
                 text: 'Down'
-                on_press: app.subtract_one(int(input_number.text))
+                on_press: app.handle_increment(-1)
     Button:
         id: convert
         text: 'Convert m to km'
+        on_press: app.handle_conversion()
     Label:
         id: output
         text: '54.717'
