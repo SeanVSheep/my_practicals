@@ -1,0 +1,24 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        TextInput:
+            id: input_number
+            text: '34'
+            multiline: False
+        BoxLayout:
+            orientation: 'vertical'
+            Button:
+                id: up
+                text: 'Up'
+                on_press: app.add_one(int(input_number.text))
+            Button:
+                id: down
+                text: 'Down'
+                on_press: app.subtract_one(int(input_number.text))
+    Button:
+        id: convert
+        text: 'Convert m to km'
+    Label:
+        id: output
+        text: '54.717'
