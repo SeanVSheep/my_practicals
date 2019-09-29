@@ -16,7 +16,8 @@ def main():
     while menu_input != 'q':
 
         if menu_input == 'c':
-            print(taxis)
+            print_taxis(taxis)
+            current_taxi = get_taxi_choice
 
         menu_input = get_menu_choice()
 
@@ -29,5 +30,9 @@ def get_menu_choice():
     while user_choice not in MENU_CHOICES:
         user_choice = input("Invalid Option\n{}\n>>>".format(MENU)).lower()
     return user_choice
+
+def print_taxis(taxis):
+    for i, taxis in enumerate(taxis):
+        print("{} - {}".format(i, taxis))
 
 main()
