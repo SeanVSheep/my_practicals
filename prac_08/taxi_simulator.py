@@ -9,7 +9,7 @@ MENU_CHOICES = "qcd"
 def main():
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
     current_taxi = None
-    bill = 0.00
+    total_bill = 0.00
     print("lets Drive!")
     menu_input = get_menu_choice()
 
@@ -25,7 +25,10 @@ def main():
             else:
                 current_taxi.start_fare()
                 distance = get_distance()
-
+                current_taxi.drive(distance)
+                current_bill = current_taxi.get_fare()
+                print("Your {} trip cost you ${:.2f}".format(current_taxi.name, current_bill))
+                total_bill += current_bill
 
 
 
