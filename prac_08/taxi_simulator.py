@@ -17,7 +17,8 @@ def main():
 
         if menu_input == 'c':
             print_taxis(taxis)
-            current_taxi = get_taxi_choice
+            current_taxi = taxis[get_taxi_choice(len(taxis))]
+
 
         menu_input = get_menu_choice()
 
@@ -34,5 +35,13 @@ def get_menu_choice():
 def print_taxis(taxis):
     for i, taxis in enumerate(taxis):
         print("{} - {}".format(i, taxis))
+
+def get_taxi_choice(total_taxis):
+    exit_loop = False
+    while not exit_loop:
+        try:
+            users_choice = int(input("Choose Taxi: "))
+            return users_choice
+
 
 main()
