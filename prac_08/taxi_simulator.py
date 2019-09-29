@@ -18,6 +18,7 @@ def main():
         if menu_input == 'c':
             print_taxis(taxis)
             current_taxi = taxis[get_taxi_choice(len(taxis))]
+            print(current_taxi)
 
 
         menu_input = get_menu_choice()
@@ -41,7 +42,13 @@ def get_taxi_choice(total_taxis):
     while not exit_loop:
         try:
             users_choice = int(input("Choose Taxi: "))
-            return users_choice
+            if users_choice >= 0 and users_choice <= 2:
+                exit_loop = True
+            else:
+                print("Taxi not listed")
+        except ValueError:
+            print("Error, Enter a number")
+    return users_choice
 
 
 main()
