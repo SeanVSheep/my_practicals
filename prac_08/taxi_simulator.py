@@ -20,9 +20,12 @@ def main():
             current_taxi = taxis[get_taxi_choice(len(taxis))]
             print(current_taxi)
         elif menu_input == 'd':
-            current_taxi.start_fare()
-            distance = get_distance()
-            print(distance)
+            if current_taxi is None:
+                print("Select your vehicle!")
+            else:
+                current_taxi.start_fare()
+                distance = get_distance()
+
 
 
 
