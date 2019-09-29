@@ -30,12 +30,12 @@ def main():
                 print("Your {} trip cost you ${:.2f}".format(current_taxi.name, current_bill))
                 total_bill += current_bill
 
-
-
+        print("Bill to date: ${:.2f}".format(total_bill))
         menu_input = get_menu_choice()
 
-
-
+    print("Total trip cost: ${:.2f}".format(total_bill))
+    print("Taxis are now:")
+    print_taxis(taxis)
 
 
 def get_menu_choice():
