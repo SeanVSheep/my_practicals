@@ -19,6 +19,11 @@ def main():
             print_taxis(taxis)
             current_taxi = taxis[get_taxi_choice(len(taxis))]
             print(current_taxi)
+        elif menu_input == 'd':
+            current_taxi.start_fare()
+            distance = get_distance()
+            print(distance)
+
 
 
         menu_input = get_menu_choice()
@@ -42,13 +47,29 @@ def get_taxi_choice(total_taxis):
     while not exit_loop:
         try:
             users_choice = int(input("Choose Taxi: "))
-            if users_choice >= 0 and users_choice <= 2:
+            if users_choice >= 0 and users_choice <= (total_taxis - 1):
                 exit_loop = True
             else:
                 print("Taxi not listed")
         except ValueError:
             print("Error, Enter a number")
     return users_choice
+
+def get_distance():
+    exit_loop = False
+    while not exit_loop:
+        try:
+            users_choice = int(input("Drive how far? "))
+            if users_choice >= 1:
+                exit_loop = True
+            else:
+                print("Please drive somewhere!")
+        except ValueError:
+            print("Error, Enter a number")
+    return users_choice
+
+
+
 
 
 main()
