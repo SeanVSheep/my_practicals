@@ -1,6 +1,5 @@
 """
-CP1404/CP5632 Practical
-Demos of various os module examples
+COULD NOT GET TO WORK
 """
 import shutil
 import os
@@ -14,14 +13,13 @@ def get_fixed_filename(filename):
         for position in range(len(new_name)):
             if new_name[0] != new_name[0].isalpha():
                 new_name = new_name.capitalize()
-            elif new_name[position] == new_name[position].islower() and new_name[position - 1] == new_name[position - 1].isalpha():
+            elif new_name[position].isalpha() and new_name[position - 1].islower():
                 new_name = create_new_string(new_name, position, '_')
                 break
-            elif position == (len(new_name)-1):
+            elif position == 5:
                 correct_output = True
                 print('HIT')
             print(position)
-
 
     return new_name
 
