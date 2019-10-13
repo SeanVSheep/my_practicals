@@ -8,11 +8,28 @@ import os
 def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
     #new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
+    correct_output = False
     new_name = filename
-    new_name[0] = new_name[0].isalpha()
+    while not correct_output:
+        for position in range(len(new_name)):
+            if new_name[0] != new_name[0].isalpha():
+                new_name = new_name.capitalize()
+            elif new_name[position] == new_name[position].islower() and new_name[position - 1] == new_name[position - 1].isalpha():
+                new_name = create_new_string(new_name, position, '_')
+                break
+            elif position == (len(new_name)-1):
+                correct_output = True
+                print('HIT')
+            print(position)
+
 
     return new_name
 
+def create_new_string(string, position, new_character):
+    new_string = string[:position] + new_character + string[position:]
+    return new_string
+
+print("hello to --- > {}".format(create_new_string('hello', 3, '_')))
 
 def demo_walk():
     """Process all subdirectories using os.walk()."""
