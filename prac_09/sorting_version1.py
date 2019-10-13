@@ -6,7 +6,6 @@ def main():
     os.chdir('FilesToSort')
 
     file_names = [name for name in os.listdir('.')]
-    print(file_names)
 
     for name in file_names:
         try:
