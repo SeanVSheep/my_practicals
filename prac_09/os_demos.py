@@ -14,12 +14,14 @@ def main():
     os.chdir('Lyrics/Christmas')
 
     # Print a list of all files in current directory
-    print("Files in {}:\n{}\n".format(os.getcwd(), os.listdir('.')))
+    print("Files in {}:\n\n{}\n\n".format(os.getcwd(), os.listdir('.')))
 
     # Make a new directory
     # The next time you run this, it will crash if the directory exists
-    # TODO: Use exception handling to avoid the crash (just pass)
-    os.mkdir('temp')
+    try:
+        os.mkdir('temp')
+    except FileExistsError:
+        print("\nTEMP FILE EXISTS\n")
 
     # Loop through each file in the (current) directory
     for filename in os.listdir('.'):
@@ -30,7 +32,6 @@ def main():
         new_name = get_fixed_filename(filename)
         print("Renaming {} to {}".format(filename, new_name))
 
-        # TODO: Try these options one at a time
         # Option 1: rename file to new name - in place
         # os.rename(filename, new_name)
 
@@ -50,11 +51,18 @@ def demo_walk():
     for directory_name, subdirectories, filenames in os.walk('.'):
         print("Directory:", directory_name)
         print("\tcontains subdirectories:", subdirectories)
-        print("\tand files:", filenames)
+        print("\t\tand files:", filenames)
         print("(Current working directory is: {})".format(os.getcwd()))
+        print("\n----------------\n")
 
-        # TODO: add a loop to rename the files
+        for filename in filenames:
+            print("filename: {}".format(filename))
+            full_name = os.path.join(directory_name, filename)
+            print("full_name: {}".format(full_name))
+            new_name = os.path.join(directory_name, get_fixed_filename(filename))
+            print("new name: {}".format(new_name))
+            os.rename(full_name, new_name)
 
 
-main()
-# demo_walk()
+# main()
+demo_walk()
